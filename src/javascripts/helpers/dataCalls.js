@@ -14,4 +14,17 @@ const getMovies = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export default getMovies;
+const getBooks = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/book`, {
+    headers: {
+      Authorization: `bearer ${token}`
+    }
+  })
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error));
+});
+
+export {
+  getMovies,
+  getBooks
+};

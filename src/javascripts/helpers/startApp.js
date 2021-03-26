@@ -1,11 +1,13 @@
 import domBuilder from '../components/domBuilder';
 import navBar from '../components/navBuilder';
-import domEvents from './domEvents';
+import bookDataObject from './bookObject';
+import navEvents from './navEvents';
 
 const startApp = () => {
   domBuilder();
   navBar();
-  domEvents();
+  navEvents();
+  bookDataObject();
 };
 
 export default startApp;
