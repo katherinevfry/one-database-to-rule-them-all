@@ -1,9 +1,10 @@
-import { getBooks } from './dataCalls';
+// import { getBooks, getChapters } from './dataCalls';
 
-// const books = {};
+// let books = {};
+// let chapters = {};
 
-const bookDataObject = () => {
-  getBooks().then((response) => console.warn(response));
-};
+// const bookDataObject = () => {
 
-export default bookDataObject;
+// };
+
+// export default bookDataObject;

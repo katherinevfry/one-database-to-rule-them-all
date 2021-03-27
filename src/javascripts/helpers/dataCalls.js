@@ -24,7 +24,18 @@ const getBooks = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const getChapters = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/chapter`, {
+    headers: {
+      Authorization: `bearer ${token}`
+    }
+  })
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error));
+});
+
 export {
   getMovies,
-  getBooks
+  getBooks,
+  getChapters
 };

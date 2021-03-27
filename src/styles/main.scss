@@ -1,2 +1,31 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
+
+body {
+  background-color: #1B2F33;
+}
+
+#card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#movieCard {
+  margin: 10px;
+  background-color:#2a4449;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  // height: 30rem;
+}
+
+.bookCard {
+  margin: 10px;
+  background-color:#2a4449;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  // height: 30rem;
+}
