@@ -24,8 +24,8 @@ const getBooks = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-const getChapters = () => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/chapter`, {
+const getOneBook = (id) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/book/${id}`, {
     headers: {
       Authorization: `bearer ${token}`
     }
@@ -34,8 +34,30 @@ const getChapters = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const getBookChapters = (id) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/book/${id}/chapter`, {
+    headers: {
+      Authorization: `bearer ${token}`
+    }
+  })
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error));
+});
+
+const bookChapters = (id) => new Promise((resolve, reject) => {
+  const book = getOneBook(id);
+  const chapters = getBookChapters(id);
+  Promise.all([book, chapters])
+    .then(([bookResponse, chaptersResponse]) => resolve(
+      { book: bookResponse, chapters: chaptersResponse }
+    ))
+    .catch((error) => reject(error));
+});
+
 export {
   getMovies,
   getBooks,
-  getChapters
+  getOneBook,
+  getBookChapters,
+  bookChapters
 };
