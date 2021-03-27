@@ -1,2 +1,56 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;500&family=Montserrat&display=swap');
+
+body {
+  background-color: #1B2F33;
+}
+
+#navbar {
+  font-family: 'Cormorant Unicase', serif;
+  font-size: 24px;
+  font-weight: 500;
+  color:#2a4449;
+}
+
+#card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#movieCard {
+  margin: 10px;
+  background-color:#2a4449;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  width: 300px;
+  height: 400px;
+  position: relative;
+}
+
+#flip-card-inner {
+  transition: transform .25 ease-in-out;
+  transform-origin: 50% 50%;
+  transform-style: preserve-3d;
+}
+
+.bookCard {
+  margin: 10px;
+  background-color:#2a4449;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  // height: 30rem;
+}
+
+#chapter-card {
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  background-color:#2a4449;
+  list-style: none;
+}

@@ -18,9 +18,6 @@ const navBar = () => {
           <a class="nav-link" id="book-page" href="#">Books</a>
         </li>
       </ul>
-      <span class="navbar-text">
-        one database to rule them all
-      </span>
     </div>
   </div>
 </nav>`;
